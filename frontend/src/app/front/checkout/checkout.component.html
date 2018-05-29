@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+          <ngb-accordion #acc="ngbAccordion" [activeIds]="active" >
+            <ngb-panel id="toggle-1" title="Identificação">
+              <ng-template ngbPanelContent>
+                <front-login></front-login>
+              </ng-template>
+            </ngb-panel>
+            <ngb-panel id="toggle-2" title="Dados Cadastrais" [disabled]="cadastroOpen">
+                <ng-template ngbPanelContent>
+                  <front-conta [conta]="conta" ></front-conta>
+                </ng-template>
+              </ngb-panel>
+            <ngb-panel id="toggle-3" title="Pagamento" [disabled]="pagamentoOpen">
+              <ng-template ngbPanelContent>
+                  <front-payment></front-payment>
+              </ng-template>
+            </ngb-panel>
+            <ngb-panel id="toggle-4" title="Resumo da Compra" [disabled]="checkoutOpen">
+                <ng-template ngbPanelContent>
+                  <front-cart [resume]="false"></front-cart>
+                </ng-template>
+              </ngb-panel>
+          </ngb-accordion>
+      </div>
+      </div>
+</div>

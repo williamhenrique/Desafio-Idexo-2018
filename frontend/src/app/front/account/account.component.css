@@ -1,0 +1,22 @@
+
+.conta{
+  margin-top: 20px;
+}
+
+.conta form{
+  width: 100%
+}
+
+.conta .form-titulo {
+  border-bottom: 1px solid #e8e6df;
+  padding-bottom: 19px;
+  margin-bottom: 30px;
+}
+
+.conta label{
+  font-weight: bold
+}
+
+
+
+

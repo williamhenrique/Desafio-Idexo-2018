@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="produto-grid-box">
+    <h3 class="produto-grid-box-title">Produtos</h3>
+  </div>
+  <div class="row">
+    <div
+    *ngFor="let item of produtos"
+    class="text-center produto-grid col-lg-3 col-md-3 col-sm-6 col-xs-12">
+        <img  [src]="item.image" class="img-fluid">
+        <h3>{{item.name}}</h3>
+        <p class="desc">{{item.description}}</p>
+        <p class="preco">{{item.value | currency: 'BRL': true}}</p>
+
+        <ul class="rating list-inline" >
+          <li class="list-inline-item" *ngFor="let rating of item.rating">
+            <i class="fa fa-star-o fa-stack-1x"></i>
+          </li>
+        </ul>
+        <a class="btn btn-dark" [routerLink]='["/produto", item.id]'>Detalhes</a>
+    </div>
+  </div>
+</div>

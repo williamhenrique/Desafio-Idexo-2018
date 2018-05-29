@@ -1,0 +1,40 @@
+{
+    "name": "Caneca Javascript",
+    "description": "Lorem ipsum fames per vitae porta fames, metus cubilia bibendum torquent nisl integer, lacus morbi dictum porttitor ad. cras lobortis in non himenaeos class tincidunt nec. ",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/41keK17O5fL.jpg",
+    "value": 29.99,
+    "factor": "B",
+    "rating": 5
+},
+{
+    "name": "Caneca Angular",
+    "description": "Lorem ipsum fames per vitae porta fames, metus cubilia bibendum torquent nisl integer, lacus morbi dictum porttitor ad. cras lobortis in non himenaeos class tincidunt nec. ",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/41UReupqz5L.jpg",
+    "value": 25.99,
+    "factor": "C",
+    "rating": 5
+},
+{
+    "name": "Camiseta Node",
+    "description": "Lorem ipsum fames per vitae porta fames, metus cubilia bibendum torquent nisl integer, lacus morbi dictum porttitor ad. cras lobortis in non himenaeos class tincidunt nec. ",
+    "image": "http://images.tcdn.com.br/img/img_prod/575647/node_js_43_1_20170722122819.jpg",
+    "value": 49.99,
+    "factor": "B",
+    "rating": 5
+},
+{
+    "name": "Caneca PHP",
+    "description": "Lorem ipsum fames per vitae porta fames, metus cubilia bibendum torquent nisl integer, lacus morbi dictum porttitor ad. cras lobortis in non himenaeos class tincidunt nec. ",
+    "image": " http://static.cloud-boxloja.com/lojas/8pkr7/produtos/15a89de3-7c08-442b-bc96-7b1f5d2a9ca3.png",
+    "value": 29.99,
+    "factor": "A",
+    "rating": 5
+},
+{
+    "name": "Caneca Linux",
+    "description": "Lorem ipsum fames per vitae porta fames, metus cubilia bibendum torquent nisl integer, lacus morbi dictum porttitor ad. cras lobortis in non himenaeos class tincidunt nec. ",
+    "image": " https://www.francanecas.com/wp-content/uploads/linux.png",
+    "value": 29.99,
+    "factor": "A",
+    "rating": 5
+}

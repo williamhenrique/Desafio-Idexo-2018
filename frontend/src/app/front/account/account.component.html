@@ -1,0 +1,115 @@
+<div class="container conta">
+    <div class="row">
+        <form [formGroup]="contaForm" novalidate>
+        <div class="col-md-12 ">
+            <h2 class="form-titulo">Dados Cadastrais</h2>
+        </div>
+        <div class="col-md-7 form-horizontal">
+            <div class="form-group row">
+                <label class="col-md-4 text-right" for="email">Nome<span class="required">*</span> </label>
+                <div class="col-md-8">
+                    <front-input errorMessage="Campo obrigatório e com 5 caracteres" label="Nome">
+                        <input class="form-control" formControlName="name" placeholder="Nome" autocomplete="off" >
+                      </front-input>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-4 text-right" for="email">Email<span class="required">*</span> </label>
+                <div class="col-md-8">
+                    <front-input errorMessage="E-mail inválido" label="Email">
+                        <input class="form-control"  formControlName="email" placeholder="Email" autocomplete="off" >
+                      </front-input>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-4 text-right" for="password">Senha<span class="required">*</span></label>
+                <div class="col-md-8">
+                    <front-input errorMessage="Campo Obrigatório e com 8 caracteres" label="cpf">
+                    <input type="password" class="form-control" formControlName="password" placeholder="Senha" autocomplete="off" >
+                    </front-input>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-4 text-right" for="cpf">CPF<span class="required">*</span> </label>
+                <div class="col-md-8">
+                    <front-input errorMessage="Campo Obrigatório e somente número" label="cpf">
+                        <input  mask="000.000.000-00"  class="form-control" formControlName="cpf" placeholder="###.###.###-##" autocomplete="off" >
+                      </front-input>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-4 text-right" for="birthday">Data Nascimento<span class="required">*</span> </label>
+                <div class="col-md-8">
+                    <front-input errorMessage="Campo obrigatório" label="birthday">
+                        <input dropSpecialCharacters="false" class="form-control" formControlName="birthday" mask="00-00-0000" placeholder="DD-MM-AAAA" autocomplete="off" >
+                      </front-input>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-md-4 text-right" for="telephone">Telefone<span class="required">*</span> </label>
+                <div class="col-md-8">
+                    <front-input errorMessage="Campo obrigatório e somente número" label="telephone">
+                        <input class="form-control" formControlName="telephone" mask="(99) 999999999" placeholder="Telefone" autocomplete="off" >
+                      </front-input>
+                </div>
+            </div>
+        </div><!--col-md-7 form-horizontal-->
+        <div class="col-md-7 form-horizontal">
+            <div class="endereco" formGroupName="Address">
+                <h2 class="form-titulo">Endereço</h2>
+                <div class="form-group row">
+                    <label class="col-md-4 text-right" for="zipcode">CEP<span class="required">*</span></label>
+                    <div class="col-md-8">
+                        <front-input errorMessage="Campo obrigatório e somente número" label="zipcode" >
+                          <input class="form-control" formControlName="zipcode" mask="00000-000" placeholder="CEP" autocomplete="off" maxlength="9">
+                        </front-input>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-4 text-right" for="street">Rua<span class="required">*</span></label>
+                    <div class="col-md-8">
+                        <front-input errorMessage="Campo obrigatório" label="street">
+                          <input class="form-control" formControlName="street" placeholder="Rua" autocomplete="off" >
+                        </front-input>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-4 text-right" for="street_number">Número<span class="required">*</span> </label>
+                    <div class="col-md-8">
+                        <front-input errorMessage="Campo obrigatório" label="street_number">
+                          <input class="form-control" formControlName="street_number" placeholder="Número" autocomplete="off" >
+                        </front-input>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-4 text-right" for="neighborhood">Bairro<span class="required">*</span></label>
+                    <div class="col-md-8">
+                        <front-input errorMessage="Campo obrigatório" label="neighborhood">
+                          <input class="form-control" formControlName="neighborhood" placeholder="Bairro" autocomplete="off" >
+                        </front-input>
+                    </div>
+                </div>
+                <div class="form-group row">
+                  <label class="col-md-4 text-right" for="city">Cidade<span class="required">*</span></label>
+                  <div class="col-md-8">
+                    <front-input errorMessage="Campo obrigatório" label="city">
+                      <input class="form-control" formControlName="city" placeholder="Cidade" autocomplete="off" >
+                    </front-input>
+                  </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-md-4 text-right" for="state">Estado<span class="required">*</span></label>
+                    <div class="col-md-8">
+                        <front-input errorMessage="Campo obrigatório" label="state">
+                          <input class="form-control" formControlName="state" placeholder="UF" autocomplete="off" maxlength="2" >
+                        </front-input>
+                    </div>
+                </div>
+                </div>
+        </div>
+        <div class="text-right">
+          <button class="btn btn-sm btn-dark"  [disabled]="!contaForm.valid" (click)="continue(contaForm.value)">Continuar</button>
+        </div>
+      </form>
+    </div><!--row-->
+</div><!--container conta-->

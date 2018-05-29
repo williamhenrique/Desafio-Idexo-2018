@@ -1,0 +1,24 @@
+.produto{
+  margin-top: 20px;
+}
+.fa.fa-star-o{
+  position: relative;
+  display: inline;
+}
+.produto-titulo{
+  font-weight: bold;
+}
+.produto-preco{
+  font-weight: bold;
+}
+.box-desc .title-desc{
+  font-weight: bold;
+  text-transform: uppercase;
+  border-bottom: 1px solid #191919;
+}
+.box-desc .title-desc{
+  color: #191919
+}
+.box-desc{
+  color: #6c6c6c;
+}

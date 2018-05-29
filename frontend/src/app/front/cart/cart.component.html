@@ -1,0 +1,83 @@
+<div class="container" *ngIf="qtd_items > 0; else templateCartEmpty">
+  <h1 *ngIf="resume">Carrinho de Compras</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th class="text-center">Imagem</th>
+            <th class="text-left">Produto</th>
+            <th class="text-left">Quantidade</th>
+            <th class="text-right">Preço Un.</th>
+            <th class="text-right">Total</th>
+          </tr>
+        </thead>
+        <!--tbody-->
+        <tbody>
+          <tr *ngFor="let product of product_list">
+            <td class="text-center"><img [src]="product?.Product?.image" class="img-cart"></td>
+            <td class="text-left">
+              <a [routerLink]='["/produto", product?.Product?.id]'>{{product?.Product?.name}}</a>
+              <br>
+              <small>{{product?.Product?.description}}</small>
+              <br><small>Fator: {{product?.Product?.factor}}</small>
+            </td>
+            <td class="text-left">
+                <div class="form-inline" *ngIf="resume; else templateResume">
+                    <div class="input-group mb-3">
+                      <input type="number" #cartItem  min="0" size="2" [value]="product?.quantity" class="form-control" style="max-width:100px">
+                      <div class="input-group-append">
+                          <button (click)="addItem(product?.Product?.id, cartItem.value)" class="btn btn-dark" type="button"><i class="fa fa-refresh"></i></button>
+                          <button type="button" class="btn btn-danger" (click)="addItem(product?.Product?.id, 0)"><i class="fa fa-times-circle"></i></button>
+                      </div>
+                    </div>
+                </div>
+                <ng-template #templateResume>
+                    {{product?.quantity}}
+                </ng-template>
+            </td>
+
+            <td class="text-right">{{product?.Product?.value | currency: 'BRL': true}}</td>
+            <td class="text-right">{{product?.product_total | currency: 'BRL': true}}</td>
+          </tr>
+        </tbody>
+        <!--tbody-->
+      </table>
+    </div>
+    <div class="col-md-4 offset-md-8">
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <td class="text-right"><strong>Sub-Total:</strong></td>
+            <td class="text-right">{{subtotal_cart | currency: 'BRL': true}}</td>
+          </tr>
+          <tr>
+            <td class="text-right"><strong>Descontos:</strong></td>
+            <td class="text-right">{{subtotal_cart - total_cart | currency: 'BRL': true}}</td>
+          </tr>
+          <tr>
+            <td class="text-right"><strong>Total:</strong></td>
+            <td class="text-right">{{total_cart | currency: 'BRL': true}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="row  justify-content-between">
+    <div class="col-4"><a *ngIf="resume"  [routerLink]='["/"]' class="btn btn-primary">Continuar Comprando</a></div>
+    <div class="col-4 text-right"><button (click)="checkout(!resume)" class="btn btn-dark">Concluir Compra</button></div>
+  </div>
+</div>
+
+<ng-template #templateCartEmpty>
+  <div class="container">
+    <div class="col-12" >
+      <h1>Ops...</h1>
+      <p>Não há itens no seu carrinho. Que tal começar por <a [routerLink]='["/"]' >aqui</a>?</p>
+
+      <br>
+      <a [routerLink]='["/"]' class="btn btn-dark">Continuar Comprando</a>
+    </div>
+  </div>
+</ng-template>
+

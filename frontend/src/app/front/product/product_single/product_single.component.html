@@ -1,0 +1,35 @@
+<div class="container" >
+  <div class="row produto">
+      <div class="col-md-8">
+        <img  [src]="produto?.image">
+      </div>
+      <div class="col-md-4">
+        <h1 class="produto-titulo"  >{{produto?.name}}</h1>
+        <ul class="rating list-inline" >
+            <li class="list-inline-item" *ngFor="let rating of produto?.rating">
+              <i class="fa fa-star-o fa-stack-1x"></i>
+            </li>
+          </ul>
+        <h2 class="produto-preco">{{produto?.value | currency: 'BRL': true}}</h2>
+        <share-button theme="modern-dark" button="facebook"></share-button>
+        <share-button theme="modern-dark" button="twitter" ></share-button>
+        <share-button theme="modern-dark" button="pinterest" ></share-button>
+        <share-button theme="modern-dark" button="linkedin" ></share-button>
+        <share-button theme="modern-dark" button="email" ></share-button>
+        <hr>
+             <form class="form-inline" [formGroup]="productForm" novalidate>
+                <front-input errorMessage="Campo obrigatório e somente números" label="Nome">
+                  <div class="input-group mb-3">
+                      <input type="number" formControlName="quantity" pattern="[1-9]{1}[0-9]{0,9}" autocomplete="off" min="1" size="2"  class="form-control" id="qtd_produto" placeholder="Quantidade"><div class="input-group-append">
+                        <button [disabled]="!productForm.valid" (click)="addItem(produto?.id, productForm.get('quantity').value)" class="btn btn-dark" type="button"><i class="fa fa-shopping-cart"></i> ADICIONAR</button>
+                      </div>
+                    </div>
+             </front-input>
+            </form>
+      </div>
+      <div class="col-md-12 box-desc">
+        <h3 class="title-desc">Descrição</h3>
+        <p>{{produto?.description}}</p>
+      </div>
+  </div>
+</div>

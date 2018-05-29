@@ -1,0 +1,46 @@
+<div class="container cartao">
+  <div class="row">
+    <form [formGroup]="paymentForm" novalidate>
+      <div class="col-md-12 ">
+          <h2 class="form-titulo">Dados Cartão de Crédito</h2>
+      </div>
+<div class="col-md-7 form-horizontal">
+<div class="form-group row">
+    <label class="col-md-4 text-right" for="card_holder_name">Nome Completo<span class="required">*</span></label>
+    <div class="col-md-8">
+        <front-input errorMessage="Campo obrigatório" label="card_holder_name">
+          <input class="form-control" formControlName="card_holder_name" placeholder="Nome Completo" autocomplete="off">
+        </front-input>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-md-4 text-right" for="card_number">Número do Cartão<span class="required">*</span></label>
+    <div class="col-md-8">
+        <front-input errorMessage="Campo obrigatório e somente número" label="card_number">
+          <input class="form-control" formControlName="card_number" placeholder="Número" autocomplete="off">
+        </front-input>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-md-4 text-right" for="cvc_cartao">CVC<span class="required">*</span></label>
+    <div class="col-md-8">
+        <front-input errorMessage="Campo obrigatório e somente número" label="card_cvv">
+          <input class="form-control" formControlName="card_cvv" placeholder="CVC" autocomplete="off" maxlength="3">
+        </front-input>
+    </div>
+</div>
+<div class="form-group row">
+    <label class="col-md-4 text-right" for="card_expiration_date">Válidade <span class="required">*</span></label>
+    <div class="col-md-8">
+        <front-input errorMessage="Campo obrigatório" label="card_expiration_date">
+            <input class="form-control" formControlName="card_expiration_date" placeholder="MMAA" autocomplete="off" maxlength="4">
+          </front-input>
+    </div>
+</div>
+</div>
+  <div class="text-right">
+      <button class="btn btn-sm btn-dark"   [disabled]="!paymentForm.valid" (click)="payment(paymentForm.value)">Continuar</button>
+  </div>
+</form>
+  </div>
+</div>

@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 offset-md-4 login-box">
+      <h1 class="text-center">Idenficação</h1>
+      <div class="form-group">
+        <input type="text" class="form-control" placeholder="Email" required autofocus />
+      </div>
+      <div class="form-group">
+          <input type="password" class="form-control" placeholder="Password" required />
+      </div>
+      <button class="btn btn-lg btn-block btn-dark" type="button" >
+        Entrar
+      </button>
+      <div class="or">
+        <span class="or-title">Ou</span>
+      </div>
+      <button class="btn btn-lg btn-block btn-primary " type="button" (click)="socialSignIn()">
+        Facebook
+      </button>
+      <hr>
+      <a [routerLink]="['/conta']" class="btn btn-lg btn-block btn-dark " type="submit">
+        Cadastre-se
+      </a>
+    </div>
+  </div>
+</div>
+
+

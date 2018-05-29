@@ -1,0 +1,17 @@
+
+.cartao{
+    margin-top: 20px;
+  }
+
+  .cartao .form-titulo {
+    border-bottom: 1px solid #e8e6df;
+    padding-bottom: 19px;
+    margin-bottom: 30px;
+  }
+
+  .cartao label{
+    font-weight: bold
+  }
+  form{
+    width: 100%
+  }
